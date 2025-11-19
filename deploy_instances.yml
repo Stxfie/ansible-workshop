@@ -12,3 +12,8 @@
       poll: true
       state: "present"
     timeout: 100
+    register: result
+
+  - name: show result
+    ansible.builtin.debug:
+      msg: "{{ result }}"
