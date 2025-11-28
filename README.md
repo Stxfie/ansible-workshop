@@ -110,15 +110,6 @@ For the other playbooks:
 - Use the `TechXchangeNL` inventory
 - Use the `TechXchangeNL` machine credential
 
-### Workflow Job Templates
-Having job templates (automation building blocks) we create two workflows:
-1. A workflow (name suggestion: "Deploy Web App") that runs the following tasks in that order:
-   - sync inventory source Terraform
-   - deploy_webserver
-   - deploy_website
-2. A workflow (name suggestion: "Deploy Full Web App") that run the following in that specific oprder:
-   - deploy_servers (which applies the terraform plan from HashiCorp Terraform Cloud)
-   - the under 1. created workflow
 
 ### API Token
 Part of the workshop is showing how you can run stuff _in_ AAP _from_ HashiCorp Terraform Cloud. For this, you need to provide a token from AAP to your HashiCorp Terraform Cloud workspace. You can create a token yourself using _API token_ under _Access Management_ in the menu. Choose write access. Copy/Paste the token somewhere, because it will only be shown once!
