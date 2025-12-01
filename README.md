@@ -43,6 +43,8 @@ You need to create a project in AAP. The project is your repository with playboo
 ### Controller Credentials
 Apart from the already available machine credential, you need a few more..
 
+> You need to have a Terraform token for both credentials. You find this in HCP Terraform under Projects -> defualt project -> settings -> variable sets -> AAP -> TERRAFORM_TOKEN
+
 - A Credential to be able to communicate with Hashicorp Terraform Cloud. Use Credential Type `Hashicorp Terraform Cloud` and the provided token in a var in HCP Terraform (formely known as Terraform Cloud).
 - A Credential to be able to sync the Terraform State File that will be used for the inventory source. Choose the credential type `Terraform backend configuration`. In the backend configuration field enter the following:
 
@@ -52,8 +54,8 @@ Apart from the already available machine credential, you need a few more..
   token = "YOURTOKENHERE"  
   workspaces { name = "YOURWORKSPACE" }  
   ```
-  For token, again, enter the token provided in a var in HCP Terraform
-  For workspace enter the workspace you made in Terraform (you did...right?)
+  
+  For workspace enter the workspace you made in Terraform
 
 ### Inventories
 Create an inventory called "TechXchangeNL" and add a dynamic inventory source to it named "Terraform". This source is of type `Terraform State` and needs some configuration to do the magic of syncing the statefile. Use the provided execution environment `ee-tech-x-change-nl` and the credential you made for it. The config that you need to give in the `Source Variables` is:
