@@ -53,7 +53,7 @@ Apart from the already available machine credential, you need a few more..
   workspaces { name = "YOURWORKSPACE" }  
   ```
 
-> You need to have a Terraform token for both credentials. You find this in HCP Terraform under Projects -> defualt project -> settings -> variable sets -> AAP -> TERRAFORM_TOKEN. For workspace enter the workspace you made in Terraform as part of the prep work you need to do in HCP Terraform
+> You need to have a Terraform token for both credentials. You find this in HCP Terraform under Projects -> default project -> settings -> variable sets -> AAP -> TERRAFORM_TOKEN. For workspace enter the workspace you made in Terraform as part of the prep work you need to do in HCP Terraform
 
 ### Inventories
 Inventories are either _pushed_ by HCP Terraform or _pulled_ by AAP using Dynamic Inventory Plugins. When pushed, they are fully maintained by HCP Terraform. With the Dynamic Inventory Plugins AAP is in control. For this workshop AAP can _pull_ the hosts either from HCP or from the Cloud where HCP deploys to. We will configure both into the same Inventory so we can try both.
