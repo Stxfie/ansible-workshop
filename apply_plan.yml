@@ -2,4 +2,13 @@
   hosts: all
   tasks:
   - name: Apply a terraform plan
-
+    hashicorp.terraform.run:
+      workspace: "terraform-workshop-srw"
+      organization: "TechXchangeNL"
+      run_message: "Ansible triggered Run c:"
+      auto_apply: true
+      poll: true
+      poll_interval: 5
+      poll_timeout: 1200
+      tf_timeout: 6000
+      state: present
